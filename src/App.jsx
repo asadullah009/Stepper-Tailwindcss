@@ -245,10 +245,10 @@ const StepperExample = () => {
         totalStepsClass=""
       /> */}
 
-      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">
+      <h1 className="capitalize text-2xl text-left py-4 font-bold">
         Text with carousel effect
-      </h1> */}
-      {/* <Stepper
+      </h1>
+      <Stepper
         type="text-with-carousel-effect"
         steps={imagesStep}
         activeStep={activeStep}
@@ -263,7 +263,7 @@ const StepperExample = () => {
         buttonClass=""
         activeDotClass=""
         inactiveDotClass=""
-      /> */}
+      />
 
       {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">Dots</h1>
       <Stepper
@@ -285,7 +285,7 @@ const StepperExample = () => {
         nextDisabledClass=""
       /> */}
 
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">Progress</h1>
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">Progress</h1>
       <Stepper
         type="progress"
         totalSteps={10}
@@ -297,7 +297,7 @@ const StepperExample = () => {
         stepIndicatorClass=""
         progressClass="!bg-blue-900"
         nextButtonClass=""
-      />
+      /> */}
     </div>
   );
 };
