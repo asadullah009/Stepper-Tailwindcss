@@ -39,9 +39,8 @@ const Stepper = ({
   stepDotClass,
   nextButtonClass,
   nextDisabledClass,
-  progressClass
+  progressClass,
 }) => {
-
   const [currentStep, setCurrentStep] = useState(1);
 
   const handleNext = () => {
@@ -254,7 +253,6 @@ const Stepper = ({
                     </div>
                     <div className="bg-white z-10 flex justify-start items-center gap-1 flex-col">
                       <p className="px-1">{step.label}</p>
-                      
                     </div>
                   </>
                 )}
@@ -442,26 +440,48 @@ const Stepper = ({
     const currentStep = steps[activeStep - 1];
 
     return (
-      <div className={containerClass}>
-        <h3 className={titleClass}>{currentStep.label}</h3>
-        <div className={contentClass}>
-          <p className={descriptionClass}>{currentStep.description}</p>
+      <div
+        className={`w-full max-w-md mx-auto bg-indigo-100 p-2 rounded-md ${containerClass}`}
+      >
+        <h3
+          className={`p-3 rounded bg-white text-gray-900 font-semibold text-xl ${titleClass}`}
+        >
+          {currentStep.label}
+        </h3>
+        <div className={`py-5 min-h-96 max-w-sm mx-auto ${contentClass}`}>
+          <p
+            className={`text-base text-gray-600 font-normal ${descriptionClass}`}
+          >
+            {currentStep.description}
+          </p>
         </div>
-        <div className={footerClass}>
+        <div
+          className={`flex items-center justify-between gap-3 p-3 bg-white rounded ${footerClass}`}
+        >
           <button
-            className={buttonClass}
+            className={`flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600 ${buttonClass}`}
             onClick={() => activeStep > 1 && onStepChange(activeStep - 1)}
           >
             <FaChevronLeft />
             Back
           </button>
           <ul className="flex gap-1 items-center">
-            <li className={stepClass}>{activeStep}</li>
-            <li className={separatorClass}>/</li>
-            <li className={totalStepsClass}>{steps.length}</li>
+            <li className={`text-lg font-medium text-gray-900 ${stepClass}`}>
+              {activeStep}
+            </li>
+            <li
+              className={`text-base font-normal text-gray-900 ${separatorClass}`}
+            >
+              /
+            </li>
+            <li
+              className={`text-base font-normal text-gray-600 ${totalStepsClass}`}
+            >
+              {steps.length}
+            </li>
           </ul>
           <button
-            className={buttonClass}
+            className={`flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600 ${buttonClass}`}
             onClick={() =>
               activeStep < steps.length && onStepChange(activeStep + 1)
             }
@@ -476,10 +496,18 @@ const Stepper = ({
     const currentStep = steps[activeStep - 1];
 
     return (
-      <div className={containerClass}>
+      <div
+        className={`w-full max-w-2xl mx-auto  p-6 rounded-lg ${containerClass}`}
+      >
         <div>
-          <h3 className={headerClass}>{currentStep.caption}</h3>
-          <div className={imageContainerClass}>
+          <h3
+            className={`p-4 rounded bg-gray-100 text-black font-bold text-2xl ${headerClass}`}
+          >
+            {currentStep.caption}
+          </h3>
+          <div
+            className={`py-6 min-h-[500px] w-full mx-auto relative ${imageContainerClass}`}
+          >
             {steps.map((image, index) => (
               <div
                 key={index}
@@ -487,14 +515,20 @@ const Stepper = ({
                   index === activeStep - 1 ? "opacity-100" : "opacity-0"
                 }`}
               >
-                <img src={image.src} alt={image.alt} className={imageClass} />
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className={`w-full h-full object-cover rounded-md ${imageClass}`}
+                />
               </div>
             ))}
           </div>
         </div>
-        <div className={footerClass}>
+        <div
+          className={`flex items-center justify-between gap-4 p-4 bg-gray-100 rounded-lg ${footerClass}`}
+        >
           <button
-            className={buttonClass}
+            className={`flex items-center gap-2 border-none text-lg font-semibold py-3 text-gray-800 transition-all duration-300 hover:text-indigo-700{buttonClass}`}
             onClick={() => activeStep > 1 && onStepChange(activeStep - 1)}
           >
             <FaChevronLeft />
@@ -505,13 +539,15 @@ const Stepper = ({
               <span
                 key={index}
                 className={
-                  index === activeStep - 1 ? activeDotClass : inactiveDotClass
+                  index === activeStep - 1
+                    ? `block w-4 h-4 rounded-full bg-green-600 ${activeDotClass}`
+                    : `block w-4 h-4 rounded-full bg-gray-300 ${inactiveDotClass}`
                 }
               />
             ))}
           </ul>
           <button
-            className={buttonClass}
+            className={`flex items-center gap-2 border-none text-lg font-semibold py-3 text-gray-800 transition-all duration-300 hover:text-indigo-700 ${buttonClass}`}
             onClick={() =>
               activeStep < steps.length && onStepChange(activeStep + 1)
             }
@@ -524,65 +560,77 @@ const Stepper = ({
     );
   } else if (type === "dots") {
     return (
-      <>
-        <div className={containerClass}>
-          <div className={buttonContainerClass}>
-            <button
-              className={`${backButtonClass} ${
-                activeStep === 1 ? backDisabledClass : ""
-              }`}
-              onClick={() => activeStep > 1 && onStepChange(activeStep - 1)}
-              disabled={activeStep === 1}
-            >
-              <FaChevronLeft />
-              Back
-            </button>
-            <ul className={stepIndicatorClass}>
-              {steps.map((_, index) => (
-                <span
-                  key={index}
-                  className={`${stepDotClass} ${
-                    index + 1 === activeStep ? activeDotClass : inactiveDotClass
-                  }`}
-                />
-              ))}
-            </ul>
-            <button
-              className={`${nextButtonClass} ${
-                activeStep === steps.length ? nextDisabledClass : ""
-              }`}
-              onClick={() =>
-                activeStep < steps.length && onStepChange(activeStep + 1)
-              }
-              disabled={activeStep === steps.length}
-            >
-              Next
-              <FaChevronRight />
-            </button>
-          </div>
+      <div
+        className={`w-full max-w-lg mx-auto bg-indigo-100 p-4 rounded-md ${containerClass}`}
+      >
+        <div
+          className={`flex items-center justify-between gap-3 p-3 bg-white rounded ${buttonContainerClass}`}
+        >
+          <button
+            className={`${backButtonClass} flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600${
+              activeStep === 1
+                ? `${backDisabledClass} opacity-50 cursor-not-allowed`
+                : ""
+            }`}
+            onClick={() => activeStep > 1 && onStepChange(activeStep - 1)}
+            disabled={activeStep === 1}
+          >
+            <FaChevronLeft />
+            Back
+          </button>
+          <ul className={`${stepIndicatorClass} flex gap-1 items-center`}>
+            {steps.map((_, index) => (
+              <span
+                key={index}
+                className={`${stepDotClass} block w-3 h-3 rounded-full ${
+                  index + 1 === activeStep
+                    ? `bg-blue-600 ${activeDotClass}`
+                    : `bg-blue-400 ${inactiveDotClass}`
+                }`}
+              />
+            ))}
+          </ul>
+          <button
+            className={`${nextButtonClass} flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600 ${
+              activeStep === steps.length
+                ? `opacity-50 cursor-not-allowed ${nextDisabledClass}`
+                : ""
+            }`}
+            onClick={() =>
+              activeStep < steps.length && onStepChange(activeStep + 1)
+            }
+            disabled={activeStep === steps.length}
+          >
+            Next
+            <FaChevronRight />
+          </button>
         </div>
-      </>
+      </div>
     );
   } else if (type === "progress") {
     return (
-      <div className={containerClass}>
-        <div className={buttonContainerClass}>
+      <div
+        className={`w-full max-w-md mx-auto bg-indigo-100 border-2 border-indigo-600 rounded-md ${containerClass}`}
+      >
+        <div
+          className={`flex items-center justify-between gap-3 p-3 bg-white rounded ${buttonContainerClass}`}
+        >
           <button
-            className={backButtonClass}
+            className={`flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-700 ease-in-out hover:text-indigo-600 ${backButtonClass}`}
             onClick={handleBack}
             disabled={currentStep === 1}
           >
             <FaChevronLeft />
             Back
           </button>
-          <div className={stepIndicatorClass}>
+          <div className={`w-full max-w-xs bg-gray-100 rounded-3xl h-2 ${stepIndicatorClass}`}>
             <div
-              className={progressClass}
+              className={`bg-indigo-600 h-2 rounded-3xl ${progressClass}`}
               style={{ width: getProgressWidth() }}
             ></div>
           </div>
           <button
-            className={nextButtonClass}
+            className={`flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600 ${nextButtonClass}`}
             onClick={handleNext}
             disabled={currentStep === totalSteps}
           >

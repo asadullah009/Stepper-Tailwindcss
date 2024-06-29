@@ -226,44 +226,44 @@ const StepperExample = () => {
         useGradient={true}
       /> */}
 
-      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">text</h1>
-      <Stepper
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">text</h1> */}
+      {/* <Stepper
         type="text"
         steps={textSteps}
         activeStep={activeStep}
         onStepChange={setActiveStep}
-        // you can also set the color of the steps and line here
+        // you can also set the color of the steps and line here if not then default will be used and use ! important in the css for custom class
 
-        containerClass="w-full max-w-md mx-auto bg-indigo-100 p-2 rounded-md"
-        titleClass="p-3 rounded bg-white text-gray-900 font-semibold text-xl"
-        contentClass="py-5 min-h-96 max-w-sm mx-auto"
-        descriptionClass="text-base text-gray-600 font-normal"
-        footerClass="flex items-center justify-between gap-3 p-3 bg-white rounded"
-        buttonClass="flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600"
-        stepClass="text-lg font-medium text-gray-900"
-        separatorClass="text-base font-normal text-gray-900"
-        totalStepsClass="text-base font-normal text-gray-600"
+        containerClass=""
+        titleClass=""
+        contentClass=""
+        descriptionClass=""
+        footerClass=""
+        buttonClass=""
+        stepClass=""
+        separatorClass=""
+        totalStepsClass=""
       /> */}
 
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">
         Text with carousel effect
-      </h1>
-      <Stepper
+      </h1> */}
+      {/* <Stepper
         type="text-with-carousel-effect"
         steps={imagesStep}
         activeStep={activeStep}
         onStepChange={setActiveStep}
-        // you can also set the color of the steps and line here
+        // you can also set the color of the steps and line here if not then default will be used and use ! important in the css for custom class
 
-        containerClass="w-full max-w-2xl mx-auto  p-6 rounded-lg"
-        headerClass="p-4 rounded bg-gray-100 text-black font-bold text-2xl"
-        imageContainerClass="py-6 min-h-[500px] w-full mx-auto relative"
-        imageClass="w-full h-full object-cover rounded-md"
-        footerClass="flex items-center justify-between gap-4 p-4 bg-gray-100 rounded-lg"
-        buttonClass="flex items-center gap-2 border-none text-lg font-semibold py-3 text-gray-800 transition-all duration-300 hover:text-indigo-700"
-        activeDotClass="block w-4 h-4 rounded-full bg-green-600"
-        inactiveDotClass="block w-4 h-4 rounded-full bg-gray-300"
-      /> 
+        containerClass=""
+        headerClass=""
+        imageContainerClass=""
+        imageClass=""
+        footerClass=""
+        buttonClass=""
+        activeDotClass=""
+        inactiveDotClass=""
+      /> */}
 
       {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">Dots</h1>
       <Stepper
@@ -272,30 +272,32 @@ const StepperExample = () => {
         activeStep={activeStep}
         onStepChange={setActiveStep}
         
-        // you can also set the color of the steps and line here
-        containerClass="w-full max-w-lg mx-auto bg-indigo-100 p-4 rounded-md"
-        buttonContainerClass="flex items-center justify-between gap-3 p-3 bg-white rounded"
-        backButtonClass="flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600"
-        backDisabledClass="opacity-50 cursor-not-allowed"
-        stepIndicatorClass="flex gap-1 items-center"
-        stepDotClass="block w-3 h-3 rounded-full"
-        activeDotClass="bg-blue-600"
-        inactiveDotClass="bg-gray-400"
-        nextButtonClass="flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600"
-        nextDisabledClass="opacity-50 cursor-not-allowed"
+        // you can also set the color of the steps and line here if not then default will be used and use ! important in the css for custom class
+        containerClass="!bg-blue-500"
+        buttonContainerClass=""
+        backButtonClass=""
+        backDisabledClass=""
+        stepIndicatorClass=""
+        stepDotClass=""
+        activeDotClass=""
+        inactiveDotClass=""
+        nextButtonClass=""
+        nextDisabledClass=""
       /> */}
 
-      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">Progress</h1>
+      <h1 className="capitalize text-2xl text-left py-4 font-bold">Progress</h1>
       <Stepper
         type="progress"
         totalSteps={10}
-        containerClass="w-full max-w-md mx-auto bg-indigo-100 border-2 border-indigo-600 rounded-md"
-        buttonContainerClass="flex items-center justify-between gap-3 p-3 bg-white rounded"
-        backButtonClass="flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-700 ease-in-out hover:text-indigo-600"
-        stepIndicatorClass="w-full max-w-xs bg-gray-100 rounded-3xl h-2"
-        progressClass="bg-indigo-600 h-2 rounded-3xl"
-        nextButtonClass="flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600"
-      /> */}
+                // you can also set the color of the steps and line here if not then default will be used and use ! important in the css for custom class
+
+        containerClass=""
+        buttonContainerClass=""
+        backButtonClass=""
+        stepIndicatorClass=""
+        progressClass="!bg-blue-900"
+        nextButtonClass=""
+      />
     </div>
   );
 };
