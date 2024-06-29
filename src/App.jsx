@@ -102,7 +102,7 @@ const StepperExample = () => {
 
   return (
     <div className="flex justify-center items-center w-full flex-col">
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">
         {" "}
         linear stepper
       </h1>
@@ -120,9 +120,9 @@ const StepperExample = () => {
           active: "bg-indigo-600",
           default: "bg-gray-200",
         }}
-      />
+      /> */}
 
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">
         {" "}
         linear stepper
       </h1>
@@ -140,9 +140,9 @@ const StepperExample = () => {
           active: "bg-indigo-600",
           default: "bg-gray-200",
         }}
-      />
+      /> */}
 
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">
         Alternative label
       </h1>
 
@@ -164,9 +164,9 @@ const StepperExample = () => {
 
       <h1 className="capitalize text-2xl text-left py-4 font-bold">
         Error Stepper
-      </h1>
+      </h1> */}
 
-      <Stepper
+      {/* <Stepper
         steps={steps}
         activeStep={activeStep}
         type="error-step"
@@ -180,9 +180,9 @@ const StepperExample = () => {
         //   active: "bg-indigo-600",
         //   default: "bg-gray-200",
         // }}
-      />
+      /> */}
 
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">
         Customized horizontal stepper
       </h1>
 
@@ -202,9 +202,9 @@ const StepperExample = () => {
           default: "bg-gray-200",
         }}
         useGradient={true}
-      />
+      /> */}
 
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">
         vertical-stepper
       </h1>
 
@@ -224,9 +224,9 @@ const StepperExample = () => {
           default: "bg-gray-200",
         }}
         useGradient={true}
-      />
+      /> */}
 
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">text</h1>
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">text</h1>
       <Stepper
         type="text"
         steps={textSteps}
@@ -243,7 +243,7 @@ const StepperExample = () => {
         stepClass="text-lg font-medium text-gray-900"
         separatorClass="text-base font-normal text-gray-900"
         totalStepsClass="text-base font-normal text-gray-600"
-      />
+      /> */}
 
       <h1 className="capitalize text-2xl text-left py-4 font-bold">
         Text with carousel effect
@@ -265,7 +265,7 @@ const StepperExample = () => {
         inactiveDotClass="block w-4 h-4 rounded-full bg-gray-300"
       /> 
 
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">Dots</h1>
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">Dots</h1>
       <Stepper
         type="dots"
         steps={imagesStep}
@@ -283,9 +283,9 @@ const StepperExample = () => {
         inactiveDotClass="bg-gray-400"
         nextButtonClass="flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600"
         nextDisabledClass="opacity-50 cursor-not-allowed"
-      />
+      /> */}
 
-      <h1 className="capitalize text-2xl text-left py-4 font-bold">Progress</h1>
+      {/* <h1 className="capitalize text-2xl text-left py-4 font-bold">Progress</h1>
       <Stepper
         type="progress"
         totalSteps={10}
@@ -295,7 +295,7 @@ const StepperExample = () => {
         stepIndicatorClass="w-full max-w-xs bg-gray-100 rounded-3xl h-2"
         progressClass="bg-indigo-600 h-2 rounded-3xl"
         nextButtonClass="flex items-center gap-1.5 border-none text-base font-medium py-2.5 text-gray-700 transition-all duration-300 hover:text-indigo-600"
-      />
+      /> */}
     </div>
   );
 };
