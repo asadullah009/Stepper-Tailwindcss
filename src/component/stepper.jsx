@@ -2,9 +2,9 @@
 import React from 'react';
 import StepConnector from './stepConnector';
 
-// eslint-disable-next-line react/prop-types
 const Stepper = ({ children, currentStep, orientation = 'horizontal' }) => {
   const isHorizontal = orientation === 'horizontal';
+
   return (
     <div className={`flex ${isHorizontal ? 'flex-row' : 'flex-col'} items-center`}>
       {React.Children.map(children, (child, index) => (

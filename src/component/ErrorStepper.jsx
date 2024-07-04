@@ -1,5 +1,4 @@
-// NonLinearStepper.jsx
-import  { useState } from 'react';
+import { useState } from 'react';
 import Stepper from './stepper';
 import Step from './step';
 import StepLabel from './stepLabel';
@@ -14,9 +13,9 @@ const steps = [
   "raza"
 ];
 
-const NonLinearStepper = () => {
+const ErrorStep = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [errors] = useState(new Set([1, 3])); 
+  const [errors] = useState(new Set([1, 3]));
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -36,11 +35,12 @@ const NonLinearStepper = () => {
     <div className="w-full">
       <Stepper currentStep={activeStep} orientation="horizontal">
         {steps.map((label, index) => (
-          <Step key={index} index={index} error={isStepError(index)}>
+          <Step key={index} index={index} error={isStepError(index)} >
             <StepLabel
               label={label}
               error={isStepError(index)}
               isActive={activeStep === index}
+              isCompleted={activeStep > index}
               optionalMessage="This step has an error."
             />
           </Step>
@@ -49,7 +49,7 @@ const NonLinearStepper = () => {
       <div className="mt-4">
         {activeStep === steps.length ? (
           <>
-            <div>All steps completed - youre finished</div>
+            <div>All steps completed - you re finished</div>
             <button onClick={handleReset} className="btn btn-primary">
               Reset
             </button>
@@ -79,4 +79,4 @@ const NonLinearStepper = () => {
   );
 };
 
-export default NonLinearStepper;
+export default ErrorStep;
